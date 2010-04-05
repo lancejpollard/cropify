@@ -5,7 +5,5 @@ $(document).ready(function() {
 	$('input[type=file]').change(function(e){
 		// $("#files").append("<div class='file'>" + $(this).val() + "</div>");
 	});
-	$("select, input:checkbox, input:radio, input:file").uniform();
-
 //		$('.text_input').scale9Grid({top:15,bottom:15,left:15,right:15});
 })

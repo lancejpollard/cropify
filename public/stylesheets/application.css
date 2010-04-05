@@ -1,6 +1,26 @@
 table {
 	text-align: center;
 }
+.table_display {
+	height:212px;
+	width:500px;
+	overflow:auto;
+	margin-bottom: 20px;
+}
 table td, table th {
 	padding: 0px 10px 0px 10px;
+}
+#display{ height:75px;width:425px;
+	clear:both;
+	position:relative;
+	left:30px;
+	padding:10px;
+	padding-top:15px;
+	background:url(../images/black/display-bg.png) no-repeat;}
+
+#display input[type=file] {
+	clear:both;
+	float:left;
+	position:relative;
+	width:235px;
 }

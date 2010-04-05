@@ -3,43 +3,46 @@
 		.content_all
 			#logo
 				%h1
-					%a{:href => "/"} Cropify
+					%a{:href => "/"}= c("metadata.title")
 				%h4 A Simple, Free, Online Batch Image Processor
 			#timer
 				#progresbar-bg
-					#progresbar-bar
+					#progresbar-bar{:title => "Soon to show total file size"}
 				#procent
-				#countdown
 				%form#cropify-form{:action => "/", :method => "post", :enctype => "multipart/form-data"}
-					%table
-						%thead
-							%tr
-								%th Width
-								%th Height
-								%th Scale Mode
-								%th Registration
-								%th Quality
-						%tbody#cropify-table-body
-							%tr
-								%td
-									%input.text_input{:type => :text, :name => "cropfiy[][width]", :size => 5}
-								%td
-									%input.text_input{:type => :text, :name => "cropfiy[][height]", :size => 5}
-								%td
-									%select{:name => "cropfiy[][scale_mode]"}
-										%option{:value => "fit"} Fit
-										%option{:value => "fill"} Fill
-										%option{:value => "chop"} Chop
-								%td
-									%select{:name => "cropfiy[][gravity_type]"}
-										- %w(none north-west north north-east west center east south-west south south-east).each do |type|
-											%option{:name => type}= type.titleize
-								%td
-									%input.text_input{:type => :text, :name => "cropfiy[][quality]", :size => 3}
-					%input{:type => "file", :name => "files[]", :multiple => "multiple"}
-					%input.button#add-size{:type => "button", :value => "Add"}
-					%input.button{:type => "submit", :value => "Crop"}
-/[if !IE] End Content		#footer Copyright©2009 Equinox, All	rights resreved.
+					.table_display
+						%table
+							%thead
+								%tr
+									%th Width
+									%th Height
+									%th Scale Mode
+									%th Registration
+									%th Quality
+							%tbody#cropify-table-body
+								%tr
+									%td
+										%input.text_input{:type => :text, :name => "cropfiy[][width]", :size => 5}
+									%td
+										%input.text_input{:type => :text, :name => "cropfiy[][height]", :size => 5}
+									%td
+										%select{:name => "cropfiy[][scale_mode]"}
+											%option{:value => "fit"} Fit
+											%option{:value => "fill"} Fill
+											%option{:value => "chop"} Chop
+									%td
+										%select{:name => "cropfiy[][gravity_type]"}
+											- %w(none north-west north north-east west center east south-west south south-east).each do |type|
+												%option{:name => type}= type.titleize
+									%td
+										%input.text_input{:type => :text, :name => "cropfiy[][quality]", :size => 3}
+					#display
+						%input{:type => "file", :name => "files[]", :multiple => "multiple"}
+						%input.button#add-size{:type => "button", :value => "Add"}
+						%input.button{:type => "submit", :value => "Crop"}
+#footer
+	:textile
+		#{c("snippets.copyright")}
 -#
 	#outer
 		.jcExample
