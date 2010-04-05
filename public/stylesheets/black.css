@@ -25,7 +25,7 @@ h4 {
 					#progresbar-bar{ margin-top:8px;float:left; width:10px; height:253px;position:relative;top:0;background:url(../images/black/progresbar.gif) no-repeat 50% 0px;}
 					#procent{ position:absolute;height:31px; width:75px; background:url(../images/black/procent-bubble.png) no-repeat top left;padding-top:5px;left:53px;font-size:21px; color:#FFF; font-weight:bold;}
 						#procent span{ font-size:14px; margin-left:2px;}
-			#cropify-form{float:right; width:500px; height:300px;padding:20px 0px 10px 0px; margin:0;text-align:left; font-size:14px;}
+			#cropify-form{float:right; width:490px; height:300px;padding:20px 0px 10px 0px; margin:0;text-align:left; font-size:14px;}
 				#cropify-form p{ float:left;}
 				#cropify-form input{ border:none; background:none;}
 					#cropify-form input.full_text{height:23px; width:400px; padding:7px 5px 0 8px;  color:#919191; font-size:14px; font-family:Arial, Helvetica, sans-serif;background:url(../images/black/input-bg.png) no-repeat 0 0; }

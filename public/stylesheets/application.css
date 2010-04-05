@@ -3,24 +3,63 @@ table {
 }
 .table_display {
 	height:212px;
-	width:500px;
+	width:490px;
 	overflow:auto;
 	margin-bottom: 20px;
 }
 table td, table th {
-	padding: 0px 10px 0px 10px;
+	padding: 0px 5px 0px 5px;
 }
-#display{ height:75px;width:425px;
+#display{ height:100px;width:425px;
 	clear:both;
 	position:relative;
 	left:30px;
 	padding:10px;
 	padding-top:15px;
-	background:url(../images/black/display-bg.png) no-repeat;}
-
-#display input[type=file] {
-	clear:both;
-	float:left;
+	background:url(../images/black/display-bg.png) no-repeat;
+}
+#nested {
 	position:relative;
-	width:235px;
+	float:left;
+	width:81px;
+	height:50px;
+}
+
+.SI-FILES-STYLIZED label.cabinet
+{
+	width: 88px;
+	height: 57px;
+	background: url(../images/black/button.png) 0 0 no-repeat;
+	
+	display: block;
+	overflow: hidden;
+	cursor: pointer;
+	clear:both;
+	position: absolute;
+}
+
+.SI-FILES-STYLIZED label.cabinet input.file
+{
+	position: relative;
+	height: 100%;
+	width: auto;
+	opacity: 0;
+	-moz-opacity: 0;
+	filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+}
+
+.large {
+	position:absolute;
+	right:30px;
+}
+#files {
+	text-align:center;
+	color: #d1d1d1;
+	width:300px;
+	padding-top:10px;
+	padding-left: 10px;
+	float:left;
+}
+#files .label {
+	text-align:center;
 }

@@ -36,13 +36,23 @@
 												%option{:name => type}= type.titleize
 									%td
 										%input.text_input{:type => :text, :name => "cropfiy[][quality]", :size => 3}
+									%td
+										%input.remove{:type => "image", :src => "/images/remove.png"}
+										%input.add{:type => "image", :src => "/images/add.png"}
 					#display
-						%input{:type => "file", :name => "files[]", :multiple => "multiple"}
-						%input.button#add-size{:type => "button", :value => "Add"}
-						%input.button{:type => "submit", :value => "Crop"}
+						#nested
+							%label.cabinet
+								%input.file{:type => "file", :name => "files[]", :multiple => ""}
+						#files
+							%p.label Choose File
+						%input.large.button{:type => "submit", :value => "Crop"}
 #footer
 	:textile
 		#{c("snippets.copyright")}
+:javascript
+	// <![CDATA[
+	SI.Files.stylizeAll();
+
 -#
 	#outer
 		.jcExample
