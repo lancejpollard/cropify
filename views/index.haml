@@ -32,5 +32,13 @@
 				%fieldset#files
 					%legend Files
 					%input{:type => "file", :name => "files[]", :multiple => "multiple"}
-					
+				%fieldset#options
+					%legend Options
+					.scale
+						%label Scale?
+						%input{:type => "checkbox", :name => "scale"}
+					.crop
+						%label Side to Crop:
+						%input{:type => "radio", :name => "crop_group", :value => "width"} Width
+						%input{:type => "radio", :name => "crop_group", :value => "height"} Height
 				%input{:type => "submit", :value => "Process"}

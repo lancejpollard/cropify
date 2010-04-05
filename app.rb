@@ -58,8 +58,8 @@ def crop(file, sizes)
   sizes.each do |size|
     x              = size.has_key?("x") ? size["x"].to_i : 0
     y              = size.has_key?("y") ? size["y"].to_i : 0
-    width          = size.has_key?("width") ? size["width"].to_i : img.columns
-    height         = size.has_key?("height") ? size["height"].to_i : img.rows
+    width          = size.has_key?("width") ? size["width"].to_i : image.columns
+    height         = size.has_key?("height") ? size["height"].to_i : image.rows
     result         << image.crop(x, y, width, height)
   end
   result
@@ -75,7 +75,7 @@ def download_zip(files, sizes)
   
   file_name = params["folder"] || "cropify-images.zip"
   t = Tempfile.new("cropify-tempfiles-#{Time.now}-#{rand(10000)}")
-  puts "HERE!"
+
   Zip::ZipOutputStream.open(t.path) do |z|
     files.each do |file|
       ext = File.extname(file[:filename])
@@ -86,7 +86,7 @@ def download_zip(files, sizes)
       end
     end
   end
-  puts "DONE"
+  
   send_file t.path, :type => 'application/zip', :disposition => 'attachment', :filename => file_name
   t.close
 end
