@@ -8,6 +8,8 @@ require 'zip/zipfilesystem'
 set :public, "public"
 set :views, "views"
 
+puts "CONFIGURATION: #{site.config.to_yaml}"
+
 configure :production do
 end
 
