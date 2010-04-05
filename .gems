@@ -1,4 +1,4 @@
 sinatra --version '>= 0.9.4'
-broadway --source gems.github.com
+broadway
 RMagick
 rubyzip
