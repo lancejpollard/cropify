@@ -1,7 +1,7 @@
 sinatra --version '>= 0.9.4'
 sinatra_more
 RedCloth --version '= 4.2.2'
-rmagick --version '= 2.12.2'
+rmagick --version '= 2.9.2'
 haml
 nokogiri
 warden
