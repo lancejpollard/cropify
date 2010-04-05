@@ -4,5 +4,6 @@ RedCloth
 haml
 nokogiri
 warden
+liquid
 broadway --source gems.rubyforge.org
 rubyzip
