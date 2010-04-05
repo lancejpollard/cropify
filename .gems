@@ -1,0 +1,4 @@
+sinatra --version '>= 0.9.4'
+broadway --source gems.github.com
+RMagick
+rubyzip
