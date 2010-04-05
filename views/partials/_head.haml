@@ -1,0 +1,41 @@
+/ meta
+%meta{'http-equiv' => 'Content-Type', :content => 'text/html'}/
+%meta{'http-equiv' =>"X-UA-Compatible", :content => "IE=EmulateIE7"}
+%meta{:name => "author", :content => "#{c("metadata.author")}"}/
+%meta{:name => "copyright", :content => "#{c("metadata.copyright")}"}/
+%meta{:name => "classification", :content => "#{c("metadata.classification")}"}/
+%meta{:name => "country", :content => "#{c("metadata.country")}"}/
+%meta{:name => "keywords", :content => "#{c("metadata.keywords")}"}/
+%meta{:name => "description", :content => "#{c("metadata.description")}"}
+%meta{:name => "viewport", :content => "width=320; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"}
+%meta{:name => "robots", :content => "index follow"}
+%meta{:name => "apple-mobile-web-app-capable", :content => "yes"}/
+%meta{:name => "apple-touch-fullscreen", :content => "yes"}/
+= yield_content :meta_head
+
+/ stylesheets
+%link{:href => "/stylesheets/jquery.Jcrop.css", :rel => "stylesheet", :type => "text/css"}/
+%link{:href => "/stylesheet/application.css", :rel => "stylesheet", :type => "text/css"}/
+= yield_content :stylesheet_head
+
+/ javascripts
+%script{:src => "/javascripts/jquery.min.js"}
+%script{:src => "/javascripts/jquery.Jcrop.js"}
+%script{:src => "/javascripts/application.js"}
+= yield_content :javascript_head
+
+/ local business card: http://microformats.org/code/hcard/creator
+%link{:rel => :profile, :href => "http://microformats.org/profile/hcard"}
+/ icons
+/ backup/basic icon, must be .ico for IE
+%link{:rel => "shortcut icon", :href => "#{c("icons.favicon")}", :type => "image/x-icon"}
+%link{:rel => "fluid-icon", :href => "#{c("metadata.fluid_icon")}", :title => "#{c("metadata.title")}"}
+/ 57x57, 320x460
+%link{:rel => "apple-touch-icon", :href => "#{c("metadata.touch_icon")}", :title => "#{c("metadata.title")}"}/
+%link{:rel => "apple-touch-startup-image", :href => "#{c("metadata.touch_startup_image")}", :title => "#{c("metadata.title")}"}/
+/ feeds
+%link{:rel => "alternate", :type => "application/rss+xml", :title => "RSS 2.0", :href => "/single/feed"}
+%link{:rel => "alternate", :type => "text/xml", :title => "RSS .92", :href => "/single/feed/rss"}
+%link{:rel => "alternate", :type => "application/atom+xml", :title => "Atom 0.3", :href => "/feed/atom"}
+
+= yield_content :extra_head

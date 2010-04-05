@@ -2,10 +2,8 @@
 %html{:xmlns => "http://www.w3.org/1999/xhtml"}
 	%head
 		%title Cropify
-		%script{:src => "/javascripts/jquery.min.js"}
-		%script{:src => "/javascripts/jquery.Jcrop.js"}
-		%script{:src => "/javascripts/application.js"}
-		%link{:href => "/stylesheets/jquery.Jcrop.css", :rel => "stylesheet", :type => "text/css"}/
-		%link{:href => "/stylesheet/application.css", :rel => "stylesheet", :type => "text/css"}/
+		= partial "partials/head", :locals => locals
 	%body
 		= yield
+		= partial "partials/vcard", :locals => locals
+		= partial "partials/analytics", :locals => locals

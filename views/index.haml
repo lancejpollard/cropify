@@ -15,8 +15,6 @@
 			- if defined?(:output) and !output.empty?
 				%img#output{:src => output}
 			%form{:action => "/", :method => "post", :enctype => "multipart/form-data"}
-				%label Download to
-				%input{:type => :text, :name => "folder", :value => "cropify-images"}
 				%fieldset#sizes
 					%legend Sizes
 					%input{:id => "add-size", :type => "button", :value => "Add Size"}
@@ -30,6 +28,7 @@
 							%option{:value => "fit"} Fit
 							%option{:value => "fill"} Fill
 							%option{:value => "chop"} Chop
+						%label Registration
 						%select{:name => "cropfiy[][gravity_type]"}
 							- %w(none north-west north north-east west center east south-west south south-east).each do |type|
 								%option{:name => type}= type.titleize
@@ -38,13 +37,6 @@
 				%fieldset#files
 					%legend Files
 					%input{:type => "file", :name => "files[]", :multiple => "multiple"}
-				%fieldset#options
-					%legend Options
-					.scale
-						%label Scale?
-						%input{:type => "checkbox", :name => "scale"}
-					.crop
-						%label Side to Crop:
-						%input{:type => "radio", :name => "crop_group", :value => "width"} Width
-						%input{:type => "radio", :name => "crop_group", :value => "height"} Height
-				%input{:type => "submit", :value => "Process"}
+					%label Download to
+					%input{:type => :text, :name => "folder", :value => "cropify-images"}
+				%input{:type => "submit", :value => "Crop"}

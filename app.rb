@@ -1,7 +1,7 @@
 require 'rubygems'
 require 'sinatra'
+require 'broadway'
 require "RMagick"
-require "active_support"
 require 'zip/zip'
 require 'zip/zipfilesystem'
 
@@ -97,7 +97,7 @@ end
 
 get "/" do
   options = {}
-  locals = {"output" => ""}
+  locals = default_locals("output" => "", :current_path => "")
   options[:locals] = locals
   haml :index, options
 end
