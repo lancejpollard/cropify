@@ -1,0 +1,36 @@
+#outer
+	.jcExample
+		.article
+			%h1 Cropify
+			%img#cropbox{:src => "/demo/sago.jpg"}/
+			%div{:style => "margin: 20px 0;"}
+				%span.requiresjcrop
+					%button#setSelect setSelect
+					%button#animateTo animateTo
+					%button#release Release
+					%button#disable Disable
+				%button#enable{:style => "display:none;"} Re-Enable
+				%button#unhook Destroy!
+				%button#rehook{:style => "display:none;"} Attach Jcrop
+			- if defined?(:output) and !output.empty?
+				%img#output{:src => output}
+			%form{:action => "/", :method => "post", :enctype => "multipart/form-data"}
+				%label Download to
+				%input{:type => :text, :name => "folder", :value => "cropify-images"}
+				%fieldset#sizes
+					%legend Sizes
+					%input{:id => "add-size", :type => "button", :value => "Add Size"}
+					.size
+						%label X
+						%input{:type => :text, :name => "sizes[][width]", :size => 5}
+						%label Y
+						%input{:type => :text, :name => "sizes[][width]", :size => 5}
+						%label Width
+						%input{:type => :text, :name => "sizes[][width]", :size => 5}
+						%label Height
+						%input{:type => :text, :name => "sizes[][height]", :size => 5}
+				%fieldset#files
+					%legend Files
+					%input{:type => "file", :name => "files[]", :multiple => "multiple"}
+					
+				%input{:type => "submit", :value => "Process"}
