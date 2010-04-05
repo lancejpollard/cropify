@@ -8,11 +8,6 @@ require 'zip/zipfilesystem'
 set :public, "public"
 set :views, "views"
 
-puts "CURRENT DIRECTORY! #{Dir.pwd}"
-puts "FILES: #{Dir.entries(Dir.pwd).inspect}"
-puts YAML.load_file("locales/en-US.yml").to_yaml
-puts "CONFIGURATION: #{site.config.to_yaml}"
-
 configure :production do
 end
 
