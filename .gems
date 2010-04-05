@@ -1,6 +1,6 @@
 sinatra --version '>= 0.9.4'
 sinatra_more
-RedCloth
+RedCloth --version '= 4.2.2'
 haml
 nokogiri
 warden
