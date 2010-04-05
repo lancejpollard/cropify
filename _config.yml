@@ -13,7 +13,7 @@ api: true
 url: 'http://localhost:4567'
 language: en-US
 keys:
-  google_analytics: UA-15601175-2
+  google_analytics: "UA-15601175-2"
 info:
   address:
     city: Berkeley
