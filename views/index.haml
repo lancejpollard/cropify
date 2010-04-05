@@ -46,6 +46,8 @@
 						#files
 							%p.label Choose File(s)
 						%input.large.button{:type => "submit", :value => "Crop"}
+/[if !IE]
+	End Content
 #footer
 	:textile
 		#{c("snippets.copyright")}

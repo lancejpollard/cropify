@@ -35,7 +35,7 @@ h4 {
 					#cropify-form input#submit{ background-image:url(../images/black/submit.png);background-repeat:no-repeat; background-position: 0 0px; height:30px; width:75px; margin-left:2px; }
 					#cropify-form input#submit:hover{ background-position:0-40px; cursor:pointer;}
 	/*footer*/
-div#footer{position:absolute; bottom:0; width:100%;text-align:center; background:url(../images/black/footer-bg.png) repeat-x 0 0; height:25px; padding-top:5px; color:#616161; font-size:11px;}
+div#footer{clear:both;position:fixed; bottom:0; width:100%;text-align:center; background:url(../images/black/footer-bg.png) repeat-x 0 0; height:25px; padding-top:5px; color:#616161; font-size:11px;}
 
 .tipsy {}
   .tipsy-inner {max-width: 200px; text-align: center;}
