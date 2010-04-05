@@ -1,3 +1,7 @@
 sinatra --version '>= 0.9.4'
+sinatra_more
+RedCloth
+haml
+nokogiri
 broadway --source gems.rubyforge.org
 rubyzip
