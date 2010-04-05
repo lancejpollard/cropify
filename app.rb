@@ -39,6 +39,7 @@ module Cropify
       y              = size.has_key?("y") ? size["y"].to_i : 0
       width          = size.has_key?("width") ? size["width"].to_i : image.columns
       height         = size.has_key?("height") ? size["height"].to_i : image.rows
+      next if width <= 0 || height <= 0
       processed      = nil
       if scale_mode == "chop"
         if gravity_type
@@ -76,7 +77,9 @@ def download_zip(files, sizes)
   files.each do |file|
     file[:results] = Cropify.crop(file, sizes)
   end
-
+  
+  return unless files.select{ |f| f[:results].empty? }.empty?
+  
   file_name = params["folder"] || "cropify-images.zip"
   t = Tempfile.new("cropify-tempfiles-#{Time.now}-#{rand(10000)}")
 
