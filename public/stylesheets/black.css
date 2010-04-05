@@ -21,10 +21,10 @@ h4 {
 
 		#logo{ height:119px; text-align:center;padding-top:50px; padding-bottom:30px;}
 		#timer{ height:300px;width:553px; padding-right:135px; padding-left:120px;background:url(../images/black/timer-bg.png) no-repeat 50% 0%; text-align:center;  position:relative; }
-			#progresbar-bg{width:10px; padding:0 9px 0 8px; height:272px;background:url(../images/black/progresbar-bg.png) no-repeat 50% 0%;float:left;}
-					#progresbar-bar{ margin-top:8px;float:left; width:10px; height:253px;position:relative;top:0;background:url(../images/black/progresbar.gif) no-repeat 50% 0px;}
-					#procent{ position:absolute;height:31px; width:75px; background:url(../images/black/procent-bubble.png) no-repeat top left;padding-top:5px;left:53px;font-size:21px; color:#FFF; font-weight:bold;}
-						#procent span{ font-size:14px; margin-left:2px;}
+			#progress-bar-bg{width:10px; padding:0 9px 0 8px; height:272px;background:url(../images/black/progress-bar-bg.png) no-repeat 50% 0%;float:left;}
+					#progress-bar{ margin-top:8px;float:left; width:10px; height:253px;position:relative;top:0;background:url(../images/black/progress-bar.gif) no-repeat 50% 0px;}
+					#file-percent{ position:absolute;height:31px; width:75px; background:url(../images/black/file-percent-bubble.png) no-repeat top left;padding-top:10px;left:55px;font-size:14px; color:#FFF; font-weight:bold;}
+						#file-percent span{ font-size:14px; margin-left:-2px;}
 			#cropify-form{float:right; width:490px; height:300px;padding:20px 0px 10px 0px; margin:0;text-align:left; font-size:14px;}
 				#cropify-form p{ float:left;}
 				#cropify-form input{ border:none; background:none;}
@@ -32,7 +32,6 @@ h4 {
 					#cropify-form input.text_input{height:23px; width:44px; padding:7px 5px 0 8px;  color:#919191; font-size:14px; font-family:Arial, Helvetica, sans-serif;background:url(../images/black/small-input-bg.png) no-repeat 0 0; }
 					#cropify-form input.button{ background-image:url(../images/black/button.png);background-repeat:no-repeat; background-position: 0 0px; height:36px; width:81px; margin-left:2px; padding: 1px 1px 1px 1px; text-align:center;
 						font-size:14px; color:#d2d2d2;}
-					#cropify-form input.button:hover{ background-image:url(../images/black/button-over.png);}
 					#cropify-form input#submit{ background-image:url(../images/black/submit.png);background-repeat:no-repeat; background-position: 0 0px; height:30px; width:75px; margin-left:2px; }
 					#cropify-form input#submit:hover{ background-position:0-40px; cursor:pointer;}
 	/*footer*/

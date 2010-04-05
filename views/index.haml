@@ -6,9 +6,9 @@
 					%a{:href => "/"}= c("metadata.title")
 				%h4 A Simple, Free, Online Batch Image Processor
 			#timer
-				#progresbar-bg
-					#progresbar-bar{:title => "Soon to show total file size"}
-				#procent
+				#progress-bar-bg
+					#progress-bar{:title => "Soon to show total file size"}
+				#file-percent
 				%form#cropify-form{:action => "/", :method => "post", :enctype => "multipart/form-data"}
 					.table_display
 						%table
@@ -44,7 +44,7 @@
 							%label.cabinet
 								%input.file{:type => "file", :name => "files[]", :multiple => ""}
 						#files
-							%p.label Choose File
+							%p.label Choose File(s)
 						%input.large.button{:type => "submit", :value => "Crop"}
 #footer
 	:textile

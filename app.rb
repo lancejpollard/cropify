@@ -103,5 +103,6 @@ get "/" do
 end
 
 post "/" do
+  puts "PARAMS: #{params.inspect}"
   zip = download_zip(params["files"], params["cropfiy"])
 end
