@@ -27,14 +27,16 @@ $(document).ready(function() {
 		
 		var new_top = 50;
 		var new_height = total_height * ratio;
-		var percent = ratio * 100;
+		var percent = Math.round(ratio * 100);
 		bar.height(new_height + "px");
 		bar.css('top', total_height - new_height + 'px');
-		$("#file-percent").html(percent + "<span>%</span>");
-		bar.show();
 		
 		amount += (amount == 1) ? " File" : " Files"
-		$("#file-percent").html((Math.round(total/1000)).toString() + "k");
+		total_kilobytes = (Math.round(total/1000)).toString();
+		amount += " (" + total_kilobytes + "k)";
+		
+		$("#file-percent").html(percent + "<span>%</span>");
+		bar.show();
 		$("#files .label").html("<p class='file'>" + amount + "</p>");
 	});
 })
