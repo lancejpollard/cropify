@@ -1,0 +1,48 @@
+@charset "utf-8";
+/* CSS Document */
+html,body {margin:0;padding:0;height:100%;font-family:Arial, Helvetica, sans-serif;}
+body{ background:#303030 url(../images/black/body-bg.png) repeat-x top left; height:auto !important; height:100%;min-height:100%;}
+
+p{padding:0; margin:0;}
+
+#logo a {
+	color: #ffffff;
+	font-size: 60px;
+	text-decoration: none;
+}
+
+h4 {
+	color: #bbbbbb;
+}
+
+#container{position:relative; margin:0 auto;width:100%; }
+.content_all{ width:810px; margin:0 auto;overflow:hidden;}
+	#content_row {width:100%;}
+
+		#logo{ height:119px; text-align:center;padding-top:50px; padding-bottom:30px;}
+		#timer{ height:300px;width:553px; padding-right:135px; padding-left:120px;background:url(../images/black/timer-bg.png) no-repeat 50% 0%; text-align:center;  position:relative; }
+			#progresbar-bg{width:10px; padding:0 9px 0 8px; height:272px;background:url(../images/black/progresbar-bg.png) no-repeat 50% 0%;float:left;}
+					#progresbar-bar{ margin-top:8px;float:left; width:10px; height:253px;position:relative;top:0;background:url(../images/black/progresbar.gif) no-repeat 50% 0px;}
+					#procent{ position:absolute;height:31px; width:75px; background:url(../images/black/procent-bubble.png) no-repeat top left;padding-top:5px;left:53px;font-size:21px; color:#FFF; font-weight:bold;}
+						#procent span{ font-size:14px; margin-left:2px;}
+			#cropify-form{float:right; width:500px; height:300px;padding:20px 0px 10px 0px; margin:0;text-align:left; font-size:14px;}
+				#cropify-form p{ float:left;}
+				#cropify-form input{ border:none; background:none;}
+					#cropify-form input.full_text{height:23px; width:400px; padding:7px 5px 0 8px;  color:#919191; font-size:14px; font-family:Arial, Helvetica, sans-serif;background:url(../images/black/input-bg.png) no-repeat 0 0; }
+					#cropify-form input.text_input{height:23px; width:44px; padding:7px 5px 0 8px;  color:#919191; font-size:14px; font-family:Arial, Helvetica, sans-serif;background:url(../images/black/small-input-bg.png) no-repeat 0 0; }
+					#cropify-form input.button{ background-image:url(../images/black/button.png);background-repeat:no-repeat; background-position: 0 0px; height:36px; width:81px; margin-left:2px; padding: 1px 1px 1px 1px; text-align:center;
+						font-size:14px; color:#d2d2d2;}
+					#cropify-form input.button:hover{ background-image:url(../images/black/button-over.png);}
+					#cropify-form input#submit{ background-image:url(../images/black/submit.png);background-repeat:no-repeat; background-position: 0 0px; height:30px; width:75px; margin-left:2px; }
+					#cropify-form input#submit:hover{ background-position:0-40px; cursor:pointer;}
+	/*footer*/
+div#footer{position:absolute; bottom:0; width:100%;text-align:center; background:url(../images/black/footer-bg.png) repeat-x 0 0; height:25px; padding-top:5px; color:#616161; font-size:11px;}
+
+.tipsy {}
+  .tipsy-inner {max-width: 200px; text-align: center;}
+	.tipsy-east { background-image: url(../images/black/tooltip-right-arrow.gif); background-position: center right; padding-right:4px;}
+	.tipsy-west { background-image: url(../images/black/tooltip-left-arrow.gif); background-position: left center;padding-left:4px;}
+	.tipsy-inner span{ border:1px solid #4a4a4a;background-color:#000;padding:2px 4px; float:left; color:#919191; font-size:11px; }
+	.tipsy-inner span.east{border-right:0px none;}
+	.tipsy-inner span.west{border-left:0px none; }
+
