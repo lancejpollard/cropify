@@ -1,2 +1,9 @@
-
+sinatra --version '>= 0.9.4'
+sinatra_more
+RedCloth
+haml
+nokogiri
+warden
 liquid
+broadway --source gems.rubyforge.org
+rubyzip
