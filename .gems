@@ -1,4 +1,3 @@
 sinatra --version '>= 0.9.4'
-broadway
-RMagick
+broadway --source gems.rubyforge.org
 rubyzip
