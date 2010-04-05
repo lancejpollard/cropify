@@ -3,5 +3,6 @@ sinatra_more
 RedCloth
 haml
 nokogiri
+warden
 broadway --source gems.rubyforge.org
 rubyzip
