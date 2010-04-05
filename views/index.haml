@@ -21,14 +21,20 @@
 					%legend Sizes
 					%input{:id => "add-size", :type => "button", :value => "Add Size"}
 					.size
-						%label X
-						%input{:type => :text, :name => "sizes[][width]", :size => 5}
-						%label Y
-						%input{:type => :text, :name => "sizes[][width]", :size => 5}
 						%label Width
-						%input{:type => :text, :name => "sizes[][width]", :size => 5}
+						%input{:type => :text, :name => "cropfiy[][width]", :size => 5}
 						%label Height
-						%input{:type => :text, :name => "sizes[][height]", :size => 5}
+						%input{:type => :text, :name => "cropfiy[][height]", :size => 5}
+						%label Scale Mode
+						%select{:name => "cropfiy[][scale_mode]"}
+							%option{:value => "fit"} Fit
+							%option{:value => "fill"} Fill
+							%option{:value => "chop"} Chop
+						%select{:name => "cropfiy[][gravity_type]"}
+							- %w(none north-west north north-east west center east south-west south south-east).each do |type|
+								%option{:name => type}= type.titleize
+						%label Quality
+						%input{:type => :text, :name => "cropfiy[][quality]", :size => 3}
 				%fieldset#files
 					%legend Files
 					%input{:type => "file", :name => "files[]", :multiple => "multiple"}
