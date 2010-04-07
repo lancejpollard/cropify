@@ -1,9 +1,19 @@
 $(document).ready(function() {
-	$("input.add").live("click", function() {
+	$("input.add").live("click", function(event) {
+		if ($(".add").length >= 4) {
+			event.preventDefault();
+			return true;
+		}
+			
 		$("#cropify-table-body").append($(this).parent().parent().clone());
 		return false;
 	});
-	$("input.remove").live("click", function() {
+	$("input.remove").live("click", function(event) {
+		if ($(".add").length == 1) {
+			event.preventDefault();
+			return true;
+		}
+		
 		$(this).parent().parent().remove();
 		return false;
 	});

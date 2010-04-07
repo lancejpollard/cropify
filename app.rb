@@ -13,14 +13,15 @@ end
 
 module Cropify
   class Image
-    attr_accessor :width, :height, :name, :type, :ext, :quality, :gravity, :content
+    attr_accessor :width, :height, :name, :type, :ext, :quality, :gravity, :content, :postfix
     
     def initialize(attributes = {})
       attributes.each {|k,v| self.send "#{k}=", v} unless attributes.nil?
     end
     
     def detailed_name
-      "#{name}-#{width}wx#{height}hx#{quality}q#{ext}"
+      self.postfix = "#{width}wx#{height}hx#{quality}q" if self.postfix.nil?
+      "#{name}-#{postfix}.#{ext}"
     end
     
     def inspect
@@ -56,16 +57,42 @@ module Cropify
           processed  = image.resize_to_fill(width, height)
         end
       end
-      result << Cropify::Image.new(
+      cropified = Cropify::Image.new(
         :quality => quality,
         :width => processed.columns,
         :height => processed.rows,
         :gravity => size["gravity_type"],
         :name => File.basename(file[:filename]).gsub(/#{File.extname(file[:filename])}$/, ""),
-        :ext => File.extname(file[:filename]),
+        # if we want to keep opacity, then we must be doing something special
+        :ext => size.has_key?("opacity") ? File.extname(file[:filename]).gsub(".", "").downcase : "jpg",
         :type => file[:type],
-        :content => quality != 0 ? processed.to_blob {self.quality = quality} : processed.to_blob
+        :postfix => size["postfix"].nil? ? nil : size["postfix"]
       )
+      tempfile = Tempfile.new("cropify-tempfiles-#{cropified.name}-#{Time.now}-#{rand(10000)}")
+      if quality != 0
+        # need to hack this prefix into the path for imagemagick:
+        # first lines on http://www.imagemagick.org/RMagick/doc/imusage.html
+        # random post on http://old.nabble.com/RMagick-write-fails---to_blob-works-td19149624.html
+        path = "#{cropified.ext}:#{tempfile.path}"
+        processed.write(path) do
+          self.quality = quality
+          self.compression = case cropified.ext
+          when "gif"
+            Magick::LZWCompression
+          when "jpg", "mng", "pdf", "tiff"
+            Magick::JPEGCompression
+          when "png"
+            Magick::ZipCompression
+          else
+            Magick::NoCompression
+          end
+        end
+      else
+        processed.write(path)
+      end
+      cropified.content = tempfile.read
+      tempfile.close
+      result << cropified
     end
     result
   end
@@ -81,6 +108,8 @@ def download_zip(files, sizes)
   return unless files.select{ |f| f[:results].empty? }.empty?
   
   file_name = params["folder"] || "cropify-images.zip"
+  file_name << ".zip" if file_name !~ /\.zip$/
+  
   t = Tempfile.new("cropify-tempfiles-#{Time.now}-#{rand(10000)}")
 
   Zip::ZipOutputStream.open(t.path) do |z|

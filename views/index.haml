@@ -19,6 +19,8 @@
 									%th Scale Mode
 									%th Registration
 									%th Quality
+									%th Postfix
+									%th Opacity?
 							%tbody#cropify-table-body
 								%tr
 									%td
@@ -35,8 +37,12 @@
 											- %w(none north-west north north-east west center east south-west south south-east).each do |type|
 												%option{:name => type}= type.titleize
 									%td
-										%input.text_input{:type => :text, :name => "cropfiy[][quality]", :size => 3}
+										%input.text_input{:type => :text, :name => "cropfiy[][quality]", :size => 3, :value => "50"}
 									%td
+										%input.text_input{:type => :text, :name => "cropfiy[][postfix]", :size => 5}
+									%td
+										%input{:type => :checkbox, :name => "cropfiy[][opacity]"}
+									%td{:style => "float:right;"}
 										%input.remove{:type => "image", :src => "/images/remove.png"}
 										%input.add{:type => "image", :src => "/images/add.png"}
 					#display
@@ -45,6 +51,7 @@
 								%input.file{:type => "file", :name => "files[]", :multiple => ""}
 						#files
 							%p.label Choose File(s)
+						%input.text_input.right{:type => :text, :name => "folder", :size => 5, :value => "cropify-images"}
 						%input.large.button{:type => "submit", :value => "Crop"}
 /[if !IE]
 	End Content
@@ -52,7 +59,6 @@
 	:textile
 		#{c("snippets.copyright")}
 :javascript
-	// <![CDATA[
 	SI.Files.stylizeAll();
 
 -#

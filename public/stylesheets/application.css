@@ -1,11 +1,13 @@
 table {
 	text-align: center;
+	width:510px;
 }
 .table_display {
 	height:212px;
-	width:490px;
+	width:570px;
 	overflow:auto;
 	margin-bottom: 20px;
+	margin-left: -27px;
 }
 table td, table th {
 	padding: 0px 5px 0px 5px;
@@ -64,4 +66,9 @@ table td, table th {
 }
 a {
 	color: #aaaaaa;
+}
+input.right {
+	position:absolute;
+	right:130px;
+	top:19px;
 }
